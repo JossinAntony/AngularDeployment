@@ -22,8 +22,6 @@ export class ViewSingleComponent implements OnInit {
     this.person =this.route.snapshot.queryParamMap.get('person');
   
     this.myPersonData = JSON.parse(this.person);
-
-    
   }
 
 }

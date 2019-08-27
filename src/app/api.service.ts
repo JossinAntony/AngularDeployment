@@ -17,7 +17,11 @@ export class ApiService {
   }
 
   getDataByMob(mob){
-    console.log(mob);
+    //console.log(mob);
     return this.http.get("http://persondb-jossin.herokuapp.com/searchByMobAPI/?q="+mob);
+  }
+
+  delDataByMob(mob){
+    return this.http.get("https://persondb-jossin.herokuapp.com/delByMobAPI/?q="+mob);
   }
 }

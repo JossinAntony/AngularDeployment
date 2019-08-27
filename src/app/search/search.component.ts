@@ -31,11 +31,7 @@ export class SearchComponent implements OnInit {
         //alert('successfully retrieved!');
         this.router.navigate(['/viewsingle'],{queryParams: {person: this.person }});
       })
-      
     }
-
-   
-      
   ngOnInit() {
   }
 

@@ -19,12 +19,12 @@ export class ContactformComponent implements OnInit {
   }
 
   onSubmit(data:NgForm) {
-    console.log("submitteddd");
-    console.log( data.value);
+    //console.log("submitteddd");
+    //console.log( data.value);
     this.apiService.insertData(data.value).subscribe((response)=>{
-      console.log(response);
+    //console.log(response);
    
-      alert('successfully inserted!');
+    alert('successfully inserted!');
     })
 
   }

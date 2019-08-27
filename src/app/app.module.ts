@@ -12,13 +12,15 @@ import {Routes, RouterModule} from '@angular/router';  // 1R.import route module
 import {ViewComponent} from './view/view.component';
 import { SearchComponent } from './search/search.component';
 import { ViewSingleComponent } from './view-single/view-single.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 const appRoutes:Routes=[                                  //2R. set approutes
   {path:'', component:ContactformComponent},
   {path:'view', component:ViewComponent},
   {path:'search', component:SearchComponent},
-  {path:'viewsingle', component:ViewSingleComponent}
+  {path:'viewsingle', component:ViewSingleComponent},
+  {path:'delete', component:DeleteComponent}
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes:Routes=[                                  //2R. set approutes
     ContactformComponent,
     ViewComponent,
     SearchComponent,
-    ViewSingleComponent
+    ViewSingleComponent,
+    DeleteComponent
   ],
   imports: [                              
     BrowserModule,
