@@ -19,7 +19,7 @@ export class ViewComponent implements OnInit {
 public fetchData(){
   this.apiService.getData().subscribe((response:Array<Object>)=>{
     this.myData = response;
-    console.log(this.myData);
+    //console.log(this.myData);
   })
 
 }

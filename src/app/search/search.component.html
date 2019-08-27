@@ -1,4 +1,4 @@
-<p *ngIf="status else nodata">
+<!-- <p *ngIf="status else nodata">
   search works!
 </p>
 
@@ -7,6 +7,29 @@
   <button type="submit" ngSubmit>CLICK</button>
 </form>
 
+<ng-template #nodata>No data available</ng-template> -->
 
+<div class="container">
+  <div class="row">
+      <div class="col col-12 col-sm-2"></div>
+      <div class="col col-12 col-sm-8">
+          <br><br><br>
+          <h1 class="text-center">Search Person</h1>
+          <br><br>
+          <form (ngSubmit) = onSubmit(f) #f="ngForm">
+              <table class="table table-borderless">
+                  <tr>
+                      <td><h4 class="text-left">Mobile:</h4></td>
+                      <td><input type="text" class="form-control" name="smob" ngModel></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td><button class="btn btn-info" type="submit" ngSubmit>SEARCH</button></td>
+                  </tr>
 
-<ng-template #nodata>No data available</ng-template>
+              </table>
+          </form>
+      </div>
+      <div class="col col-12 col-sm-2"></div>
+  </div>
+</div>

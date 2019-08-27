@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'; //import form modules
 import {ApiService} from '../api.service';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,17 +11,31 @@ import {ApiService} from '../api.service';
 })
 export class SearchComponent implements OnInit {
 
-  status = false;
+  private person = "";
+  
+  constructor(private apiservice:ApiService,private router: Router) { }
 
-  constructor() { }
+  // status = false;
+  // onSubmit(data){
+  //   if(data.value.name == 'admin'){
+  //     this.status=true;
+  //     console.log(data);
+  //   }
+  // }
 
-  onSubmit(data){
-    if(data.value.name == 'admin'){
-      this.status=true;
-      console.log(data);
+
+    onSubmit(data:NgForm){
+      this.apiservice.getDataByMob(data.value.smob).subscribe((response:Array<Object>)=>{
+        this.person=JSON.stringify(response);
+        //this.router.navigate(['/viewsingle',this.person]);
+        //alert('successfully retrieved!');
+        this.router.navigate(['/viewsingle'],{queryParams: {person: this.person }});
+      })
+      
     }
-  }
 
+   
+      
   ngOnInit() {
   }
 
