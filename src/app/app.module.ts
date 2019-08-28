@@ -13,6 +13,8 @@ import {ViewComponent} from './view/view.component';
 import { SearchComponent } from './search/search.component';
 import { ViewSingleComponent } from './view-single/view-single.component';
 import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
+import { UpdateComponent } from './update/update.component';
 
 
 const appRoutes:Routes=[                                  //2R. set approutes
@@ -20,7 +22,9 @@ const appRoutes:Routes=[                                  //2R. set approutes
   {path:'view', component:ViewComponent},
   {path:'search', component:SearchComponent},
   {path:'viewsingle', component:ViewSingleComponent},
-  {path:'delete', component:DeleteComponent}
+  {path:'delete', component:DeleteComponent},
+  {path: 'edit', component:EditComponent},
+  {path :'update', component:UpdateComponent}
 ]
 
 @NgModule({
@@ -31,7 +35,9 @@ const appRoutes:Routes=[                                  //2R. set approutes
     ViewComponent,
     SearchComponent,
     ViewSingleComponent,
-    DeleteComponent
+    DeleteComponent,
+    EditComponent,
+    UpdateComponent
   ],
   imports: [                              
     BrowserModule,

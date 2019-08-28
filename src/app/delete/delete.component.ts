@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from'@angular/forms';
 import {ApiService} from '../api.service';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -12,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor(private apiservice:ApiService, private router:Router) { }
+  constructor(private apiservice:ApiService) { }
 
   ngOnInit() {
    
