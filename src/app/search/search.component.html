@@ -1,13 +1,13 @@
-<!-- <p *ngIf="status else nodata">
-  search works!
-</p>
 
-<form (ngSubmit) = onSubmit(f) #f = "ngForm">
+
+<!-- <form (ngSubmit) = onSubmit(f) #f = "ngForm">
   <input type="text" name="name" ngModel>
   <button type="submit" ngSubmit>CLICK</button>
-</form>
+</form> -->
 
-<ng-template #nodata>No data available</ng-template> -->
+<!--<ng-template #nodata>No data available</ng-template> -->
+
+
 
 <div class="container">
   <div class="row">
@@ -32,4 +32,35 @@
       </div>
       <div class="col col-12 col-sm-2"></div>
   </div>
-</div>
+
+
+  <p *ngIf="!status else display">
+    
+  </p>
+  <ng-template #display>
+    <div class="row">
+      <div class="col col-12 col-sm-12">
+        <table class="table">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>mobile</th>
+          </tr>
+          <tr *ngFor="let data of person">
+              <td>{{data.uname}}</td>
+              <td>{{data.umail}}</td>
+              <td>{{data.umsg}}</td>
+              <td>{{data.umob}}</td>
+          </tr>
+        </table>
+       </div>
+      </div>
+    
+  </ng-template>
+  
+
+
+
+
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import { Router  , ActivatedRoute } from '@angular/router';;
+import { Router  , ActivatedRoute } from '@angular/router';
+import {NgForm} from '@angular/forms'; //import form modules
 
 @Component({
   selector: 'app-update',
@@ -18,7 +19,9 @@ export class UpdateComponent implements OnInit {
 
     this.person =this.route.snapshot.queryParamMap.get('person');
     this.myPersonData = JSON.parse(this.person);
-    console.log(this.myPersonData);
+    console.log(this.person);
+    console.log(this.myPersonData[0]);
   }
+
 
 }

@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class EditComponent implements OnInit {
   private person= "";
+  private myData: Array<object> = [];
 
   constructor(private apiservice:ApiService, private router:Router) { }
 
@@ -19,9 +20,17 @@ export class EditComponent implements OnInit {
 
   onSubmit(data:NgForm){
     this.apiservice.getDataByMob(data.value.smob).subscribe((response:Array<object>)=>{
-      this.person=JSON.stringify(response);
-      this.router.navigate(['/update'], {queryParams: {person:this.person}});
+      // this.person=JSON.stringify(response);
+      // this.router.navigate(['/update'], {queryParams: {person:this.person}});
+      this.myData=response;
+      console.log(response);
     })
+  }
+
+  edit(){
+   this.apiservice.updatePerson(this.myData[0]).subscribe((response)=>{
+    console.log(response);
+   })
   }
 
 

@@ -22,3 +22,68 @@
       <div class="col col-12 col-sm-2"></div>
   </div>
 </div>
+
+<!-- <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-2"></div>
+                
+                    <div class="col col-12 col-sm-8">
+                    <br><br><br>
+                    <h2 class="text-center"> Edit details </h2>
+                    <br>
+                    <form >
+                        <table class="table table-borderless">
+                            <tr>
+                                <td >Id:</td>
+                                <td><input type="hidden" class="form-control" name="u_id" id="u_id" ngModel></td>
+                            </tr>
+                            <tr>
+                                <td>Name:</td>
+                                <td><input type="text" class="form-control" name="uname" id="uname" ngModel></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td><input type="text" class="form-control" name="umail" id="umail" ngModel></td>
+                            </tr>
+                            <tr>
+                                <td>Mobile:</td>
+                                <td><input type="text" class="form-control" name="umob" id="umob" ngModel></td>
+                            </tr>
+                            <tr>
+                                <td>Message:</td>
+                                <td><input type="text" class="form-control" name="umsg" id="umsg" ngModel></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><button class="btn btn-danger type=submit" ngSubmit>DELETE</button></td>
+                                <td><button class="btn btn-success type=submit" ngSubmit>UPDATE</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
+
+              <div class="col col-12 col-sm-2"></div>
+          </div>
+      </div> -->
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    </tr>
+    <tr *ngFor="let data of myData">
+            <td> <input type="text" [(ngModel)]="data._id" name="id"></td>
+        <td> <input type="text" [(ngModel)]="data.uname" name="uname"></td>
+        <td> <input type="text" [(ngModel)]="data.umsg" name="umsg"></td>
+        <td> <input type="text" [(ngModel)]="data.umail" name="umail"></td>
+        <td> <input type="text" [(ngModel)]="data.umob" name="umob"></td>
+    </tr>
+    <tr>
+        <td>
+            <Button class="btn btn-info" (click)="edit()">UPDATE</Button>
+        </td>
+    </tr>
+</table>

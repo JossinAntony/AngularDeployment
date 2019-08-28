@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class SearchComponent implements OnInit {
 
-  private person = "";
+  private person : Array<object>;
   
   constructor(private apiservice:ApiService,private router: Router) { }
 
@@ -23,13 +23,19 @@ export class SearchComponent implements OnInit {
   //   }
   // }
 
-
+    private status = false;
     onSubmit(data:NgForm){
+
       this.apiservice.getDataByMob(data.value.smob).subscribe((response:Array<Object>)=>{
-        this.person=JSON.stringify(response);
+        
+        if(response.length > 0){
+          this.status = true;
+          this.person = response;
+        }
+        //this.person=JSON.stringify(response);
         //this.router.navigate(['/viewsingle',this.person]);
         //alert('successfully retrieved!');
-        this.router.navigate(['/viewsingle'],{queryParams: {person: this.person }});
+        //this.router.navigate(['/viewsingle'],{queryParams: {person: this.person }});
       })
     }
   ngOnInit() {

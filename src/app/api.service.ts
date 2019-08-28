@@ -24,4 +24,9 @@ export class ApiService {
   delDataByMob(mob){
     return this.http.get("https://persondb-jossin.herokuapp.com/delByMobAPI/?q="+mob);
   }
+
+  updatePerson(data){
+    return this.http.post("https://persondb-jossin.herokuapp.com/updatePerson",data);
+  }
 }
+
