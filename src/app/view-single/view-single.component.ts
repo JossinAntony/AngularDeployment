@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import { Router  , ActivatedRoute } from '@angular/router';;
+import { Router  , ActivatedRoute } from '@angular/router';
+import { Person } from '../person.model';
 
 @Component({
   selector: 'app-view-single',
@@ -14,7 +15,7 @@ export class ViewSingleComponent implements OnInit {
   constructor(private apiService:ApiService,private route: ActivatedRoute) { }
 
    person = "";
-   myPersonData: Array<object> = [];
+   myPersonData: Array<Person> = [];
 
   ngOnInit() {
     //console.log(this.route.snapshot.params['uname']);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 import { Router  , ActivatedRoute } from '@angular/router';
 import {NgForm} from '@angular/forms'; //import form modules
+import { Person } from '../person.model';
 
 @Component({
   selector: 'app-update',
@@ -11,7 +12,7 @@ import {NgForm} from '@angular/forms'; //import form modules
 export class UpdateComponent implements OnInit {
 
    person = "";
-   myPersonData: Array<object> = [];
+   myPersonData: Array<Person> = [];
 
   constructor(private apiService:ApiService,private route: ActivatedRoute) { }
 
