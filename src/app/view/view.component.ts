@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
+import { Person } from '../person.model';
 
 @Component({
   selector: 'app-view',
@@ -8,7 +9,7 @@ import {ApiService} from '../api.service';
 })
 export class ViewComponent implements OnInit {
 
-  private myData: Array<object> = [];
+   myData: Person [];
 
   constructor(private apiService:ApiService) { }
 
@@ -17,7 +18,7 @@ export class ViewComponent implements OnInit {
   }
 
 public fetchData(){
-  this.apiService.getData().subscribe((response:Array<Object>)=>{
+  this.apiService.getData().subscribe((response:Person[])=>{
     this.myData = response;
     //console.log(this.myData);
   })
