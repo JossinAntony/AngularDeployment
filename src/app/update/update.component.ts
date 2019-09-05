@@ -17,10 +17,10 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
 
-    this.person =this.route.snapshot.queryParamMap.get('person');
-    this.myPersonData = JSON.parse(this.person);
-    console.log(this.person);
-    console.log(this.myPersonData[0]);
+    // this.person =this.route.snapshot.queryParamMap.get('person');
+    // this.myPersonData = JSON.parse(this.person);
+    // console.log(this.person);
+    // console.log(this.myPersonData[0]);
   }
 
 
