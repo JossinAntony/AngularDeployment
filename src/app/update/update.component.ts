@@ -10,8 +10,8 @@ import {NgForm} from '@angular/forms'; //import form modules
 })
 export class UpdateComponent implements OnInit {
 
-  private person = "";
-  private myPersonData: Array<object> = [];
+   person = "";
+   myPersonData: Array<object> = [];
 
   constructor(private apiService:ApiService,private route: ActivatedRoute) { }
 

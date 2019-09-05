@@ -11,8 +11,8 @@ import {Router} from "@angular/router";
 })
 export class SearchComponent implements OnInit {
 
-  private person : Array<object>;
-  
+   person : Array<object>;
+
   constructor(private apiservice:ApiService,private router: Router) { }
 
   // status = false;
@@ -23,11 +23,11 @@ export class SearchComponent implements OnInit {
   //   }
   // }
 
-    private status = false;
+     status = false;
     onSubmit(data:NgForm){
 
       this.apiservice.getDataByMob(data.value.smob).subscribe((response:Array<Object>)=>{
-        
+
         if(response.length > 0){
           this.status = true;
           this.person = response;

@@ -10,8 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  private person= "";
-  private myData: Array<object> = [];
+   person= "";
+   myData: Array<object> = [];
 
   constructor(private apiservice:ApiService, private router:Router) { }
 

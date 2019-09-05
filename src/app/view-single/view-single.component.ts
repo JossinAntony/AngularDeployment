@@ -13,16 +13,15 @@ export class ViewSingleComponent implements OnInit {
 
   constructor(private apiService:ApiService,private route: ActivatedRoute) { }
 
-  private person = "";
-  private myPersonData: Array<object> = [];
+   person = "";
+   myPersonData: Array<object> = [];
 
   ngOnInit() {
     //console.log(this.route.snapshot.params['uname']);
     //console.log( this.route.snapshot.queryParamMap.get('person'));
     this.person =this.route.snapshot.queryParamMap.get('person');
-  
+
     this.myPersonData = JSON.parse(this.person);
   }
 
 }
-    
